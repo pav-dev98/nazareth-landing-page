@@ -6,7 +6,7 @@ import "../css/tailwind.css";
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     ReactGA.initialize(process.env.NEXT_PUBLIC_GA_ID);
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.send("pageview");
   }, []);
   return (
     <ThemeProvider attribute="class">
