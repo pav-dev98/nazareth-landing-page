@@ -3,33 +3,37 @@ import { useForm, useWatch } from "react-hook-form";
 import { Disclosure, Transition } from "@headlessui/react";
 
 const PopupWidget = () => {
+  const wassap = process.env.NEXT_PUBLIC_WASSAP_URL;
   const {
     register,
     handleSubmit,
     reset,
     control,
     formState: { errors, isSubmitSuccessful, isSubmitting },
+  
   } = useForm({
     mode: "onTouched",
   });
   const [isSuccess, setIsSuccess] = useState(false);
   const [Message, setMessage] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   const userName = useWatch({ control, name: "name", defaultValue: "Someone" });
+  
 
-  const onSubmit = async (data, e) => {
-    console.log(data);
-    await fetch("https://api.web3forms.com/submit", {
+  const onSubmit = async (data, e) => {// no se sabe que es esto
+    console.log(data,"por pavel");
+
+    await fetch("/api/contacts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
       },
-      body: JSON.stringify(data, null, 2),
+      body: JSON.stringify(data),
     })
       .then(async (response) => {
         let json = await response.json();
-        if (json.success) {
+        if (json.data) {
           setIsSuccess(true);
           setMessage(json.message);
           e.target.reset();
@@ -48,10 +52,12 @@ const PopupWidget = () => {
 
   return (
     <div>
-      <Disclosure>
+      <Disclosure open={true}>
         {({ open }) => (
           <>
-            <Disclosure.Button className="fixed z-40 flex items-center justify-center transition duration-300 bg-indigo-500 rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 ease">
+            <Disclosure.Button className="fixed z-40 flex items-center justify-center transition duration-300 bg-indigo-500 rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 ease" onClick={()=>{
+              console.log("click",open)
+            }}>
               <span className="sr-only">Open Contact form Widget</span>
               <Transition
                 show={!open}
@@ -84,7 +90,7 @@ const PopupWidget = () => {
                 className="absolute w-6 h-6 text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6"
+                  className="w-6 h-6 abierto"
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
@@ -106,15 +112,15 @@ const PopupWidget = () => {
               leaveTo="opacity-0 translate-y-5">
               <Disclosure.Panel className=" flex flex-col  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-gray-300 dark:border-gray-800 bg-white shadow-2xl rounded-md sm:max-h-[calc(100vh-120px)]">
                 <div className="flex flex-col items-center justify-center h-32 p-5 bg-indigo-600">
-                  <h3 className="text-lg text-white">How can we help?</h3>
+                  <h3 className="text-lg text-white">Como te podemos ayudar?</h3>
                   <p className="text-white opacity-50">
-                    We usually respond in a few hours
+                    Dejanos tu mensaje y te contactaremos en breve.
                   </p>
                 </div>
                 <div className="flex-grow h-full p-6 overflow-auto bg-gray-50 ">
                   {!isSubmitSuccessful && (
                     <form onSubmit={handleSubmit(onSubmit)} noValidate>
-                      <input
+                      {/* <input
                         type="hidden"
                         value="YOUR_ACCESS_KEY_HERE"
                         {...register("apikey")}
@@ -133,13 +139,12 @@ const PopupWidget = () => {
                         type="checkbox"
                         className="hidden"
                         style={{ display: "none" }}
-                        {...register("botcheck")}></input>
-
+                        {...register("botcheck")}></input> */}
                       <div className="mb-4">
                         <label
                           htmlFor="full_name"
                           className="block mb-2 text-sm text-gray-600 dark:text-gray-400">
-                          Full Name
+                          Nombre Completo
                         </label>
                         <input
                           type="text"
@@ -166,7 +171,7 @@ const PopupWidget = () => {
                         <label
                           htmlFor="email"
                           className="block mb-2 text-sm text-gray-600 dark:text-gray-400">
-                          Email Address
+                          Correo Electrónico
                         </label>
                         <input
                           type="email"
@@ -197,7 +202,7 @@ const PopupWidget = () => {
                         <label
                           htmlFor="message"
                           className="block mb-2 text-sm text-gray-600 dark:text-gray-400">
-                          Your Message
+                          Mensaje
                         </label>
 
                         <textarea
@@ -242,7 +247,7 @@ const PopupWidget = () => {
                                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                             </svg>
                           ) : (
-                            "Send Message"
+                            "Enviar Mensaje"
                           )}
                         </button>
                       </div>
@@ -250,13 +255,13 @@ const PopupWidget = () => {
                         className="text-xs text-center text-gray-400"
                         id="result">
                         <span>
-                          Powered by{" "}
+                          Contacte con nosotros{" "}
                           <a
-                            href="https://Web3Forms.com"
+                            href={wassap}
                             className="text-gray-600"
                             target="_blank"
                             rel="noopener noreferrer">
-                            Web3Forms
+                            +51916924457
                           </a>
                         </span>
                       </p>
