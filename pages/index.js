@@ -29,7 +29,7 @@ const Home = () => {
       <Hero />
       <SectionTitle
         pretitle="Nuestros servicios"
-        title="Que ofrecemos?">
+        title="¿Que ofrecemos?">
         Por el momento nos centramos en lo que concideramos la educacion mas importante, primaria y secundaria.
       </SectionTitle>
       <Services />

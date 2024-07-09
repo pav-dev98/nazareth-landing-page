@@ -15,8 +15,8 @@ const Hero = () => {
               ¡Transforma el futuro de tu hijo con educación de calidad.
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-              Ofrecemos programas de reforzamiento y avance para estudiantes de
-              primaria y secundaria para la ciudad de <Mark>Tingo Maria</Mark>.
+              Ofrecemos programas de reforzamiento y nivelación para estudiantes de nivel
+              primaria y secundaria en la ciudad de <Mark>Tingo Maria</Mark>.
             </p>
 
             <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row mt-8">
@@ -63,7 +63,7 @@ const Hero = () => {
       <Container>
         <div className="flex flex-col justify-center">
           <div className="text-xl text-center text-gray-700 dark:text-white">
-            Con la confianza de <span className="text-indigo-600">1000+</span>{" "}
+            Con la confianza de <span className="text-indigo-600">500+</span>{" "}
             estudiantes que han pasado por nuestra institución.
           </div>
 
