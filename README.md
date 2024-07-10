@@ -6,27 +6,20 @@
  <br>
 </p>
 
-# Nextly - Landing Page Template with Next.js & Tailwind CSS
-
-Nextly is a free landing page & marketing website template for  startups and indie projects. Its built with Next.js & TailwindCSS.
-And its completely open-source.
- 
-![image](https://user-images.githubusercontent.com/1884712/121497169-03228680-c990-11eb-975a-e77fddc43de0.png)
+# Nazareth - Landing Page Template with Next.js & Tailwind CSS
 
 ## How to use
-
-Click on the [Use Template](https://github.com/surjithctly/nextly-template/generate) button on this page to clone this respository to your github account. Or you can also clone this respository using terminal or bash. 
 
 ### 1\. Clone this Repository
 
 ```bash
-git clone https://github.com/surjithctly/nextly-template.git
+git clone https://github.com/pav-dev98/nazareth-landing-page.git
 ```
 
 ### 2\. Navigate to the directory
 
 ```
-cd nextly-template
+cd nazareth-landing-page
 ```
 
 ### 3\. Install dependencies
@@ -35,6 +28,23 @@ cd nextly-template
 yarn install
 # or
 npm install
+```
+### 4\. Create .env file
+
+```bash
+touch .env
+```
+```or#
+any way to create a file in windows but the file called .env
+```
+
+```
+editar el .env con las credenciales compartidas y tomando la estructura .env.example
+```
+### 4\. Update Prisma client
+
+```
+npx prisma generate
 ```
 
 ### 5\. Run Dev Server
@@ -45,16 +55,9 @@ yarn dev
 npm run dev
 ```
 
-## Deploy with Vercel
-
-Deploy this template using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/surjithctly/nextly-template&project-name=nextly-template&repository-name=nextly-template)
-
-
 ## Author
 
-Surjith S M ( [@surjithctly](https://surjithctly.in/) )
+Pavel M G ( [@pav-dev98](https://github.com/pav-dev98) )
 
 ---
 
