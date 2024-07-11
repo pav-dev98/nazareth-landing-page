@@ -1,9 +1,10 @@
 import { PrismaClient } from '@prisma/client'
 import LogoutButton from '../components/LogoutButton';
+import Table from '../components/Table';
 
 const prisma = new PrismaClient()
 
-const Admin = ({contacts,name}) => {
+const Admin = ({contacts,user}) => {
     return (
         <>
         <div className="w-full">
@@ -21,40 +22,13 @@ const Admin = ({contacts,name}) => {
         </div>
         <div className="container mx-auto">
             <div className='mb-8'>
-                <h2 className="text-4xl">Bienvenido {name} 😎</h2>
-                <p className='text-xs'>Rol : Admin</p>
+                <h2 className="text-4xl">Bienvenido <span className='capitalize'>{user.name}</span> 😎</h2>
+                <p className='text-xs'>Rol : <span className='capitalize'>{user.role}</span></p>
             </div> 
             <div>
                 <h3 className='mb-2 text-white/70 ml-1'>Tu lista de mensajes</h3>
                 <div className='shadow-sm overflow-hidden flex'>
-                    <div className='border border-trueGray-900 dark:border-trueGray-600/50 rounded-xl '>
-                        <div className='rounded-md my-8'>
-                        <table className='table-auto border-collapse'>
-                        <thead>
-                            <tr>
-                                <th className='border-b dark:border-trueGray-600/50 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left'>Nombre</th>
-                                <th className='border-b dark:border-trueGray-600/50 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left'>Email</th>
-                                <th className='border-b dark:border-trueGray-600/50 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left'>Leido</th>
-                                <th className='border-b dark:border-trueGray-600/50 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left'>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody className='text-white/70'>
-                            {contacts.map((contact) => (
-                                <tr key={contact.id}>
-                                    <td className='border-b border-trueGray-100 dark:border-trueGray-600/50 p-4 pr-8 '>{contact.fullName}</td>
-                                    <td className='border-b border-trueGray-100 dark:border-trueGray-600/50 p-4 pr-8'>{contact.email}</td>
-                                    <td className='border-b border-trueGray-100 dark:border-trueGray-600/50 p-4 pr-8'>{contact.read ? 'si': 'No'}</td>
-                                    <td className='border-b border-trueGray-100 dark:border-trueGray-600/50 p-4 pr-8'>
-                                        <button className='border py-1 px-4 rounded-md border-green-500'>responder</button>
-                                        <button className='border py-1 px-4 ml-4 rounded-md border-red-500'>eliminar</button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                        </table>   
-                        </div>
-                    </div>
-                    
+                    <Table data={contacts}/>
                 </div>
             </div>
         </div>
@@ -64,15 +38,15 @@ const Admin = ({contacts,name}) => {
 
   export const getServerSideProps = async (context) => {
     const {req, res} = context;
-    const name = req.cookies.name;
+    const user = JSON.parse(req.cookies.user);
     
     ///
     ///
-    const contacts = await prisma.contactUs.findMany();
+    // const contacts = await prisma.contactUs.findMany();
     return {
       props: {
-        contacts,
-        name
+        
+        user
       },
     };
   };

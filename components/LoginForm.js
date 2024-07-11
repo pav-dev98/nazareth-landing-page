@@ -24,7 +24,7 @@ const LoginForm = ()=>{
 
             if(!data.error){
                 Cookies.set('token', data.token);
-                Cookies.set('name', data.name);
+                Cookies.set('user', JSON.stringify(data.user));
                 router.push('/admin');
             }
             else{

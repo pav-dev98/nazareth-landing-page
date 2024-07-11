@@ -47,6 +47,12 @@ editar el .env con las credenciales compartidas y tomando la estructura .env.exa
 npx prisma generate
 ```
 
+### 5\. Create DataBase Admin
+
+```
+node seed.js
+```
+
 ### 5\. Run Dev Server
 
 ```

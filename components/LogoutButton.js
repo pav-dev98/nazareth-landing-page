@@ -8,7 +8,7 @@ const LogoutButton = () => {
     return (
         <button onClick={() => {
             Cookies.remove('token');
-            Cookies.remove('name');
+            Cookies.remove('user');
             router.push('/login');
         }
         } className="px-8 py-2 bg-red-700 rounded">Logout</button>
