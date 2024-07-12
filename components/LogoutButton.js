@@ -11,7 +11,7 @@ const LogoutButton = () => {
             Cookies.remove('user');
             router.push('/login');
         }
-        } className="px-8 py-2 bg-red-700 rounded">Logout</button>
+        } className="px-8 py-2 bg-secColor rounded">Logout</button>
     )
 };
 

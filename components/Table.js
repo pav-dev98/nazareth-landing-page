@@ -1,16 +1,24 @@
 'use client';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState , useEffect} from 'react';
 
 const Table = () => {
     const [contacts, setContacts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [isMounted, setIsMounted] = useState(false);
     const getData = async()=>{
         const res = await fetch('/api/listcontacts');
         const data = await res.json();
         setContacts(data.data);
+        setLoading(false);
     };
     useEffect(() => {
-        getData();      
+        getData();
+        setIsMounted(true);      
     }, []);
+    if(loading){
+        return <div>cargando...{isMounted && <FontAwesomeIcon icon="coffee" className='ml-2'/> }</div>
+    }
     return(
         <div className='border border-trueGray-900 dark:border-trueGray-600/50 rounded-xl min-w-[600px] min-h-[400px]'>
             {contacts.length !== 0 ?  <div className='rounded-md my-8'>
@@ -30,15 +38,16 @@ const Table = () => {
                                     <td className='border-b border-trueGray-100 dark:border-trueGray-600/50 p-4 pr-8'>{contact.email}</td>
                                     <td className='border-b border-trueGray-100 dark:border-trueGray-600/50 p-4 pr-8'>{contact.read ? 'si': 'No'}</td>
                                     <td className='border-b border-trueGray-100 dark:border-trueGray-600/50 p-4 pr-8'>
-                                        <button className='border py-1 px-4 rounded-md border-green-500'>responder</button>
-                                        <button className='border py-1 px-4 ml-4 rounded-md border-red-500'>eliminar</button>
+                                        <button className='border py-1 px-4 rounded-md border'><FontAwesomeIcon icon={'fa-reply'}/></button>
+                                        <button className='border py-1 px-4 ml-4 rounded-md border'><FontAwesomeIcon icon={'trash-alt'}/></button>
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
                 </table>   
             </div>:<div className='w-full h-full flex justify-center items-center'>
-                cargando...
+                No hay mensajes
+                
             </div>}
         </div>
     )

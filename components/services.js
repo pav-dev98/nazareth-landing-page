@@ -12,22 +12,22 @@ const Services  = () => {
     <Container>
       <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-2">
         <div className="lg:col-span-2 xl:col-auto">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-terColor">
             <p className="text-2xl leading-normal ">
               Nuestro programa de <Mark>primaria</Mark> está diseñado para estudiantes del 1° al 6° grado,ofreciendo clases de lunes a viernes para asegurar el avance y la nivelación de los estudiantes. 
             </p>
 
-            <Link href="/" className="text-indigo-600">
+            <Link href="/" className="text-primColor">
                 Saber más
             </Link>
           </div>
         </div>
         <div className="">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
+          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-terColor">
             <p className="text-2xl leading-normal mb-4">
             Tambien sabemos que la universidad esta  al vuelta de la esquina, ofrecemos clases de reforzamiento y avance para estudiantes de 1°, 2° y 3° grado de <Mark>secundaria</Mark>.
             </p>
-            <Link href="/" className="text-indigo-600">
+            <Link href="/" className="text-primColor">
                 Saber más
             </Link>
           </div>

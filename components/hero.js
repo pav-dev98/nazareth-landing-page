@@ -24,7 +24,7 @@ const Hero = () => {
                 href={wassap}
                 target="_blank"
                 rel="noopener"
-                className="px-8 py-4 text-lg font-medium text-center text-white bg-indigo-600 rounded-md "
+                className="px-8 py-4 text-lg font-medium text-center text-white bg-primColor rounded-md "
               >
                 Contactanos
               </a>
@@ -63,7 +63,7 @@ const Hero = () => {
       <Container>
         <div className="flex flex-col justify-center">
           <div className="text-xl text-center text-gray-700 dark:text-white">
-            Con la confianza de <span className="text-indigo-600">500+</span>{" "}
+            Con la confianza de <span className="text-primColor">500+</span>{" "}
             estudiantes que han pasado por nuestra institución.
           </div>
 

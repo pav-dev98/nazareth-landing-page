@@ -7,11 +7,11 @@ const prisma = new PrismaClient()
 const Admin = ({contacts,user}) => {
     return (
         <>
-        <div className="w-full">
+            <div className="w-full">
             <nav className="container mx-auto py-9 flex">
                 <h1>Academia Nazareth</h1>
                 <ul className="flex ml-auto gap-3 items-center">
-                    <li className='text-indigo-600'>Dashboard</li>
+                    <li className='text-primColor'>Dashboard</li>
                     <li>Estudiantes</li>
                     <li>Profesores</li>
                     <li>Clases</li>
@@ -19,8 +19,8 @@ const Admin = ({contacts,user}) => {
                     <li><LogoutButton/></li>
                 </ul>
             </nav>
-        </div>
-        <div className="container mx-auto">
+            </div>
+            <div className="container mx-auto">
             <div className='mb-8'>
                 <h2 className="text-4xl">Bienvenido <span className='capitalize'>{user.name}</span> 😎</h2>
                 <p className='text-xs'>Rol : <span className='capitalize'>{user.role}</span></p>
@@ -31,22 +31,19 @@ const Admin = ({contacts,user}) => {
                     <Table data={contacts}/>
                 </div>
             </div>
-        </div>
+            </div>
         </>
     );
   };
 
   export const getServerSideProps = async (context) => {
-    const {req, res} = context;
-    const user = JSON.parse(req.cookies.user);
+    console.log("getserversideprops admin");
+    const payloadHeader = context.req.headers['x-user-payload'];
+    const userPayload = payloadHeader ? JSON.parse(payloadHeader) : null;
     
-    ///
-    ///
-    // const contacts = await prisma.contactUs.findMany();
     return {
       props: {
-        
-        user
+        user: userPayload,
       },
     };
   };
