@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div>
               {" "}
-              <Link href="/" className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
+              <Link href="/" className="flex items-center space-x-2 text-2xl font-medium text-primColor/90 dark:text-gray-100">
                   <span>Academia</span>
                     <Image
                       src="/img/logo.svg"
@@ -71,7 +71,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="">
-            <div>Follow us</div>
+            <div>Siguenos</div>
             <div className="flex mt-5 space-x-5 text-gray-400 dark:text-gray-500">
               <a
                 href="https://twitter.com/web3templates"

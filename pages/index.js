@@ -12,6 +12,7 @@ import Services from "../components/services";
 import Cta from "../components/cta";
 import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
+import Pricing from "../components/pricing";
 
 const Home = () => {
   return (
@@ -42,6 +43,12 @@ const Home = () => {
       <Benefits data={benefitOne} />
       <Benefits imgPos="right" data={benefitTwo} />
       <Benefits data={benefitTree} />
+      <SectionTitle
+        pretitle="Planes de pago"
+        title = "Por que sabemos que los precios tambien importan">
+        Ofrecemos planes de pago flexibles para que nuestros servicios sean accesibles para todos.
+      </SectionTitle>
+      <Pricing />
       <SectionTitle
         pretitle="Ver video"
         title="Solo un hecha un vistazo">

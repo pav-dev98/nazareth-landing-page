@@ -9,6 +9,7 @@ import {
 
 import benefitOneImg from "../public/img/benefit-tree.svg";
 import benefitTwoImg from "../public/img/benefit-four.svg";
+import benefitTreeImg from "../public/img/12345.svg";
 
 const benefitOne = {
   title: "Solo 12 alumnos por clase",
@@ -60,7 +61,7 @@ const benefitTwo = {
 const benefitTree = {
   title: "Educación personalizada",
   desc: "Por que sabemos que la atención personalizada es la clave para el éxito de nuestros estudiantes.",
-  image: benefitTwoImg,
+  image: benefitTreeImg,
   bullets: [
     {
       title: "Seleccionamos el mejor método de enseñanza para cada alumno",
