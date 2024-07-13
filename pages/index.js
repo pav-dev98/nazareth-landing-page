@@ -45,8 +45,8 @@ const Home = () => {
       <Benefits data={benefitTree} />
       <SectionTitle
         pretitle="Planes de pago"
-        title = "Por que sabemos que los precios tambien importan">
-        Ofrecemos planes de pago flexibles para que nuestros servicios sean accesibles para todos.
+        title = "Planes Asequibles para Todos">
+        Ofrecemos diferentes opciones de suscripción para adaptarnos a tus necesidades y presupuesto.
       </SectionTitle>
       <Pricing />
       <SectionTitle
