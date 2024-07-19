@@ -106,7 +106,7 @@ const Navbar = () => {
 
         <div className="hidden mr-3 space-x-4 lg:flex nav__item">
           <Link href={wassap} className="px-6 py-2 text-white bg-primColor rounded-md md:ml-5" target="_blank">
-          +51916924457
+          WhatsApp
           </Link>
 
           <ThemeChanger />
