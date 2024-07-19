@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Container from "./container";
 import primaria from "../public/img/primaria.jpg";
-import secundaria from "../public/img/secundaria.jpg";
+import secundaria from "../public/img/secu.jpg";
 
 
 const Services  = () => {
@@ -41,14 +41,15 @@ const Services  = () => {
             Tambien sabemos que la universidad esta  al vuelta de la esquina, ofrecemos clases de reforzamiento y avance para estudiantes de 1°, 2° y 3° grado de <Mark>secundaria</Mark>.
             </p> */}
             <Image
-              src={primaria}
+              src={secundaria}
               width="500"
               height="auto"
               alt="Primaria"
               className={"object-cover"}
               placeholder="blur"
             >
-            </Image> 
+
+            </Image>
             <p className="text-2xl leading-normal mb-4 mt-4">
             Reforzamiento y Avance en el nivel <Mark>Secundaria</Mark> diseñado para estudiantes del 1° al 3° grado; con un plan de estudios efocado a clases prácticas y material didáctico personalizado.
             </p>
