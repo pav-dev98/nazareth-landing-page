@@ -10,7 +10,9 @@ import {
   IdentificationIcon,
   PuzzlePieceIcon,
   ClipboardDocumentCheckIcon,
-  ScaleIcon
+  ScaleIcon,
+  ArchiveBoxArrowDownIcon,
+  HomeIcon
 } from "@heroicons/react/24/solid";
 
 import benefitOneImg from "../public/img/benefit-tree.svg";
@@ -48,12 +50,12 @@ const benefitTwo = {
     {
       title: "Aulas amplias y carpetas personales",
       desc: "Nextly is designed as a mobile first responsive template.",
-      icon: <IdentificationIcon />,
+      icon: <HomeIcon />,
     },
     {
       title: "Servicios sanitarios independientes",
       desc: "This template is powered by latest technologies and tools.",
-      icon: <PuzzlePieceIcon />,
+      icon: <ArchiveBoxArrowDownIcon />,
     },
     {
       title: "Aulas con luz natural y ventilación adecuada",
@@ -81,7 +83,7 @@ const benefitTree = {
     {
       title: "Profesores capacitados y comprometidos",
       desc: "Nextly comes with a zero-config light & dark mode. ",
-      icon: <ScaleIcon />,
+      icon: <IdentificationIcon />,
     },
   ],
 };
