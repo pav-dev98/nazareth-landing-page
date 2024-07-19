@@ -5,6 +5,12 @@ import {
   DevicePhoneMobileIcon,
   AdjustmentsHorizontalIcon,
   SunIcon,
+  AcademicCapIcon,
+  ArrowTrendingUpIcon,
+  IdentificationIcon,
+  PuzzlePieceIcon,
+  ClipboardDocumentCheckIcon,
+  ScaleIcon
 } from "@heroicons/react/24/solid";
 
 import benefitOneImg from "../public/img/benefit-tree.svg";
@@ -15,7 +21,6 @@ const benefitOne = {
   title: "Solo 12 alumnos por clase",
   desc: "Por que sabemos que la mientras mas pequeño el grupo, mayor la atención que podemos brindar a cada alumno.",
   image: benefitOneImg,
-  // deme tres beneficios de la educacion personalizada
   bullets: [
     {
       title: "Satisfaccion de las necesidades de cada alumno",
@@ -25,30 +30,30 @@ const benefitOne = {
     {
       title: "Clases dinámicas y participativas",
       desc: "Here you can add the next benefit point.",
-      icon: <ChartBarSquareIcon />,
+      icon: <AcademicCapIcon />,
     },
     {
       title: "Mayor rendimiento académico",
       desc: "This will be your last bullet point in this section.",
-      icon: <CursorArrowRaysIcon />,
+      icon: <ArrowTrendingUpIcon />,
     },
   ],
 };
 
 const benefitTwo = {
-  title: "Ambiente seguro y estimulante ",
+  title: "Ambiente seguro y acogedores",
   desc: "Por que sabemos que el entorno es fundamental para el aprendizaje de nuestros estudiantes.",
   image: benefitTwoImg,
   bullets: [
     {
-      title: "Profesores capacitados y comprometidos",
+      title: "Aulas amplias y carpetas personales",
       desc: "Nextly is designed as a mobile first responsive template.",
-      icon: <DevicePhoneMobileIcon />,
+      icon: <IdentificationIcon />,
     },
     {
-      title: "Areas de estimulación temprana",
+      title: "Servicios sanitarios independientes",
       desc: "This template is powered by latest technologies and tools.",
-      icon: <AdjustmentsHorizontalIcon />,
+      icon: <PuzzlePieceIcon />,
     },
     {
       title: "Aulas con luz natural y ventilación adecuada",
@@ -71,12 +76,12 @@ const benefitTree = {
     {
       title: "Seguimiento personalizado del progreso de cada alumno",
       desc: "This template is powered by latest technologies and tools.",
-      icon: <AdjustmentsHorizontalIcon />,
+      icon: <ClipboardDocumentCheckIcon />,
     },
     {
-      title: "Clases de refuerzo y nivelación",
+      title: "Profesores capacitados y comprometidos",
       desc: "Nextly comes with a zero-config light & dark mode. ",
-      icon: <SunIcon />,
+      icon: <ScaleIcon />,
     },
   ],
 };

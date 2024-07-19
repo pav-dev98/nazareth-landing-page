@@ -2,9 +2,9 @@ import Image from "next/image";
 import React from "react";
 import Container from "./container";
 
-import userOneImg from "../public/img/user1.jpg";
-import userTwoImg from "../public/img/user2.jpg";
-import userThreeImg from "../public/img/user3.jpg";
+import userOneImg from "../public/img/user4.png";
+import userTwoImg from "../public/img/user5.png";
+import userThreeImg from "../public/img/user6.png";
 
 const Testimonials  = () => {
   return (
@@ -12,8 +12,11 @@ const Testimonials  = () => {
       <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
         <div className="lg:col-span-2 xl:col-auto">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-terColor">
-            <p className="text-2xl leading-normal ">
+            {/* <p className="text-2xl leading-normal ">
               ¡Profesores <Mark>pacientes!</Mark> Mi hija Sofía ya no tiene miedo a las matemáticas.
+            </p> */}
+            <p className="text-2xl leading-normal ">
+            ¡Profesores dedicados! Mi hija ha mejorado notablemente en sus calificaciones de matemáticas.
             </p>
 
             <Avatar
@@ -26,7 +29,7 @@ const Testimonials  = () => {
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-terColor">
             <p className="text-2xl leading-normal ">
-           ¡Excelente! Mi hijo Juan ha mejorado mucho en el colegio gracias a sus <Mark>clases</Mark> .
+            ¡Recomendado! Mis hijos disfrutan las clases y se sienten más seguros en sus exámenes.
             </p>
 
             <Avatar
@@ -39,7 +42,7 @@ const Testimonials  = () => {
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-terColor">
             <p className="text-2xl leading-normal ">
-            ¡Me encanta! matemáticas <Mark>divertidas</Mark> y muchos juegos. Mis hijos están felices. ¡Gracias!"
+            ¡Grandes resultados! Mis hijos ahora están más atentos y participativos en clase.
             </p>
 
             <Avatar

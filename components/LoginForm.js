@@ -29,7 +29,7 @@ const LoginForm = ()=>{
                 console.log(expires)
                 Cookies.set('token', data.token, {expires: expires});
                 Cookies.set('user', JSON.stringify(data.user), {expires: expires});
-                router.push('/admin');
+                router.push('/admin/dashboard');
             }
             else{
                 setError('Invalid credentials');

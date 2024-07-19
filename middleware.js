@@ -10,7 +10,7 @@ export async function middleware(req) {
   const token = tokenObj ? tokenObj.value : null;
  
   if (!token) {
-    return NextResponse.redirect(new URL('/login', req.url));
+    return NextResponse.redirect(new URL('/admin/auth/login', req.url));
   }
 
   try {
@@ -19,10 +19,10 @@ export async function middleware(req) {
     response.headers.set('x-user-payload', JSON.stringify(payload));
     return response;
   } catch (err) {
-    return NextResponse.redirect(new URL('/login', req.url));
+    return NextResponse.redirect(new URL('/admin/auth/login', req.url));
   }
 }
 
 export const config = {
-  matcher: ['/admin/:path*'], // Rutas que deseas proteger
+  matcher: ['/admin/dashboard/:path*'], // Rutas que deseas proteger
 };

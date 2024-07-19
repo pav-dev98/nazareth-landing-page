@@ -2,19 +2,32 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import Container from "./container";
+import primaria from "../public/img/primaria.jpg";
+import secundaria from "../public/img/secundaria.jpg";
 
-import userOneImg from "../public/img/user1.jpg";
-import userTwoImg from "../public/img/user2.jpg";
-import userThreeImg from "../public/img/user3.jpg";
 
 const Services  = () => {
   return (
     <Container>
       <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-2">
         <div className="lg:col-span-2 xl:col-auto">
+          
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-terColor">
-            <p className="text-2xl leading-normal ">
+            {/* <p className="text-2xl leading-normal ">
               Nuestro programa de <Mark>primaria</Mark> está diseñado para estudiantes del 1° al 6° grado,ofreciendo clases de lunes a viernes para asegurar el avance y la nivelación de los estudiantes. 
+            </p> */}
+            <Image
+              src={primaria}
+              width="500"
+              height="auto"
+              alt="Primaria"
+              className={"object-cover"}
+              placeholder="blur"
+            >
+
+            </Image>
+            <p className="text-2xl leading-normal mt-4">
+            Reforzamiento y Nivelación en el nivel <Mark>Primaria</Mark> diseñado para estudiantes del 1° al 6° grado; brindando apoyo y guía en sus tareas escolares, asegurando su crecimiento académico.
             </p>
 
             <Link href="/" className="text-primColor">
@@ -24,8 +37,20 @@ const Services  = () => {
         </div>
         <div className="">
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-terColor">
-            <p className="text-2xl leading-normal mb-4">
+            {/* <p className="text-2xl leading-normal mb-4">
             Tambien sabemos que la universidad esta  al vuelta de la esquina, ofrecemos clases de reforzamiento y avance para estudiantes de 1°, 2° y 3° grado de <Mark>secundaria</Mark>.
+            </p> */}
+            <Image
+              src={primaria}
+              width="500"
+              height="auto"
+              alt="Primaria"
+              className={"object-cover"}
+              placeholder="blur"
+            >
+            </Image> 
+            <p className="text-2xl leading-normal mb-4 mt-4">
+            Reforzamiento y Avance en el nivel <Mark>Secundaria</Mark> diseñado para estudiantes del 1° al 3° grado; con un plan de estudios efocado a clases prácticas y material didáctico personalizado.
             </p>
             <Link href="/" className="text-primColor">
                 Saber más

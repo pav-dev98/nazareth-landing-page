@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client'
-import LogoutButton from '../components/LogoutButton';
-import Table from '../components/Table';
+import LogoutButton from '../../../components/LogoutButton';
+import Table from '../../../components/Table';
 
 const prisma = new PrismaClient()
 
@@ -40,6 +40,15 @@ const Admin = ({contacts,user}) => {
     console.log("getserversideprops admin");
     const payloadHeader = context.req.headers['x-user-payload'];
     const userPayload = payloadHeader ? JSON.parse(payloadHeader) : null;
+
+    if(userPayload.role !== 'ADMIN'){
+        return {
+            redirect: {
+                destination: '/admin/not-authorized',
+                permanent: false,
+            },
+        };
+    }
     
     return {
       props: {

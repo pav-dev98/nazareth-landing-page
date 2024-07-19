@@ -14,6 +14,7 @@ import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
 import Pricing from "../components/pricing";
 
+
 const Home = () => {
   return (
     <>
@@ -26,53 +27,18 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
-      <Hero />
-      <SectionTitle
-        pretitle="Nuestros servicios"
-        title="¿Que ofrecemos?">
-        Por el momento nos centramos en lo que concideramos la educacion mas importante, primaria y secundaria.
-      </SectionTitle>
-      <Services />
-      <SectionTitle
-        pretitle="Nuestros beneficios"
-        title=" Por que deberian elegirnos?">
-        Utilizamos métodos de enseñanza modernos y efectivos para asegurar que
-        nuestros estudiantes comprendan y dominen los temas.
-      </SectionTitle>
-      <Benefits data={benefitOne} />
-      <Benefits imgPos="right" data={benefitTwo} />
-      <Benefits data={benefitTree} />
-      <SectionTitle
-        pretitle="Planes de pago"
-        title = "Planes Asequibles para Todos">
-        Ofrecemos diferentes opciones de suscripción para adaptarnos a tus necesidades y presupuesto.
-      </SectionTitle>
-      <Pricing />
-      <SectionTitle
-        pretitle="Ver video"
-        title="Solo un hecha un vistazo">
-        Echa un vistazo a nuestro video promocional para obtener una idea de lo
-        que ofrecemos.
-      </SectionTitle>
-      <Video />
-      <SectionTitle
-        pretitle="Testimonios"
-        title="Lo que nuestros clientes dicen">
-        Nuestros clientes están felices y satisfechos con nuestros servicios.
-        Aquí hay algunos testimonios de ellos.
-      </SectionTitle>
-      <Testimonials />
-      {/* <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
-        Answer your customers possible questions here, it will increase the
-        conversion rate as well as support or chat requests.
-      </SectionTitle> */}
-      {/* <Faq /> */}
-      <Cta />
-      <Footer />
-      <PopupWidget />
+      
     </>
   );
 }
 
+export const getServerSideProps = async (context) => {
+
+  return {
+    redirect:{
+      destination: '/landing-page',
+      permanent: false
+    }
+  };
+};
 export default Home;

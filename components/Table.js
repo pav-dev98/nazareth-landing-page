@@ -7,10 +7,24 @@ const Table = () => {
     const [loading, setLoading] = useState(true);
     const [isMounted, setIsMounted] = useState(false);
     const getData = async()=>{
-        const res = await fetch('/api/listcontacts');
+        const res = await fetch('/api/contactus');
         const data = await res.json();
         setContacts(data.data);
         setLoading(false);
+    };
+    const deleteContactus = async(id) => {
+        console.log("eliminando",id);
+        const res = await fetch(`/api/contactus/${id}`,{
+            method: 'DELETE',
+        });
+        const data = await res.json();
+        if(data.error){
+            console.log("error al eliminar")
+        }else{
+            console.log("registro eliminado",data.data);
+            let updateContactus = contacts.filter((contact) => contact.id !== data.data.id);
+            setContacts(updateContactus);
+        }
     };
     useEffect(() => {
         getData();
@@ -39,7 +53,7 @@ const Table = () => {
                                     <td className='border-b border-trueGray-100 dark:border-trueGray-600/50 p-4 pr-8'>{contact.read ? 'si': 'No'}</td>
                                     <td className='border-b border-trueGray-100 dark:border-trueGray-600/50 p-4 pr-8'>
                                         <button className='border py-1 px-4 rounded-md border'><FontAwesomeIcon icon={'fa-reply'}/></button>
-                                        <button className='border py-1 px-4 ml-4 rounded-md border'><FontAwesomeIcon icon={'trash-alt'}/></button>
+                                        <button className='border py-1 px-4 ml-4 rounded-md border'><FontAwesomeIcon icon={'trash-alt'} onClick={()=>{deleteContactus(contact.id)}}/></button>
                                     </td>
                                 </tr>
                             ))}

@@ -1,11 +1,9 @@
-import { PrismaClient } from '@prisma/client';
 import jwt from 'jsonwebtoken';
-
-const prisma = new PrismaClient();
+import prisma from '../../libs/prisma';
 const secretKey = 'secreto';
 
 const authAPI = async (req, res) =>{
-
+    console.log("auth api")
     if(req.method !== 'POST'){
       return res.status(400).json({message: 'just receive post request'})
     }

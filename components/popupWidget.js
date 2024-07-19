@@ -23,7 +23,7 @@ const PopupWidget = () => {
 
   const onSubmit = async (data, e) => {// no se sabe que es esto
     
-    await fetch("/api/contacts", {
+    await fetch("/api/contactus", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -109,7 +109,7 @@ const PopupWidget = () => {
               leaveTo="opacity-0 translate-y-5">
               <Disclosure.Panel className=" flex flex-col  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-gray-300 dark:border-gray-800 bg-white shadow-2xl rounded-md sm:max-h-[calc(100vh-120px)]">
                 <div className="flex flex-col items-center justify-center h-32 p-5 bg-indigo-600">
-                  <h3 className="text-lg text-white">Como te podemos ayudar?</h3>
+                  <h3 className="text-lg text-white">¿Como te podemos ayudar?</h3>
                   <p className="text-white opacity-50">
                     Dejanos tu mensaje y te contactaremos en breve.
                   </p>
@@ -146,7 +146,7 @@ const PopupWidget = () => {
                         <input
                           type="text"
                           id="full_name"
-                          placeholder="John Doe"
+                          placeholder="Ejem : Juan Perez"
                           {...register("name", {
                             required: "Full name is required",
                             maxLength: 80,
@@ -180,7 +180,7 @@ const PopupWidget = () => {
                               message: "Please enter a valid email",
                             },
                           })}
-                          placeholder="you@company.com"
+                          placeholder="Ejem : Juan.Perez@gmail.com"
                           className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
                             errors.email
                               ? "border-red-600 focus:border-red-600 ring-red-100"
@@ -208,7 +208,7 @@ const PopupWidget = () => {
                           {...register("message", {
                             required: "Enter your Message",
                           })}
-                          placeholder="Your Message"
+                          placeholder="Tu mensaje aquí"
                           className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring   ${
                             errors.message
                               ? "border-red-600 focus:border-red-600 ring-red-100"
